@@ -14,7 +14,7 @@ module.exports = ({nombre, ap_paterno, ap_materno, correo, usuario, contraseña,
             fecha_nacimiento,
         });
         res.status(200).json({
-            message: "Usuario creado",
+            message: "Usuario creado correctamente",
         });
     }
     else
