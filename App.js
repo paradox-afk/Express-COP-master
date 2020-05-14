@@ -15,6 +15,7 @@ console.log(condicion);*/
 // Components
 const Place = require("./components/Place/Place");
 const User = require("./components/User/User");
+console.log("holi")
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
