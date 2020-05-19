@@ -19,7 +19,9 @@ User.get("/", (req, res) => {
 });
 
 User.post("/login", (req, res) => {
+  console.log("holi");
   services.validate(req.body, res);
+
 });
 
 User.post("/isAuth", middleware, (req, res) => {

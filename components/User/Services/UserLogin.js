@@ -4,9 +4,9 @@ const {verifyPassword, jwtConfig} = require("../../../libs/utils");
 
 module.exports = async ({correo, contraseña}, res) => 
 {
-    let status = 500;
+    let status = 200;
     let response = {
-        message: "Error al autentificar el usuario",
+        message: false,
         parameters: ["correo","contraseña"],
     };
     if(correo && contraseña) {
@@ -35,7 +35,7 @@ module.exports = async ({correo, contraseña}, res) =>
             if(token){
                 status = 200;
                 response = {
-                    message: "autenticado correctamente",
+                    message: true,
                     data: {
                         user: {
                             id:user.id,
