@@ -7,8 +7,6 @@ const cors = require("cors");
 const services = require("./Services");
 const lugaresDB = require("./PlaceDAL");
 
-
-
 const Place = express.Router();
 const middleware = require("../Middleware");
 Place.use(express.urlencoded({ extended: false }));
@@ -17,18 +15,22 @@ Place.use(cors());
 
 
 
-const lugares = [];
-lugaresDB.findAll(
-  {attributes: ['name', 'image', 'lat', 'lon', 'description']}
-).then(projects => {
-  for(var i=0;i<projects.length;i++)
-    lugares.push(projects[i].dataValues);
-})
+
 
 Place.get("/", (req, res) =>{
+  const lugares = [];
+
+  lugaresDB.findAll(
+    {attributes: ['name', 'image', 'lat', 'lon', 'description']}
+  ).then(projects => {
+    for(var i=0;i<projects.length;i++)
+    {
+      lugares.push(projects[i].dataValues);
+    }
+
     const response={
-      data: [],
-      message: []  
+    data: [],
+    message: []  
     }
     let statusCode = null;
     const {search}= req.query;
@@ -45,9 +47,11 @@ Place.get("/", (req, res) =>{
         statusCode=200;
     }
     res.status(statusCode).send(response);
+  });
 });
 
-Place.post("/", middleware, (req, res) => {
+Place.post("/", (req, res) => {
+  console.log("asd");
   services.create(req.body, res);
 });
 

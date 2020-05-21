@@ -19,7 +19,7 @@ module.exports = ({nombre, ap_paterno, ap_materno, correo, usuario, contraseña,
             }
         }
         insertar(nombre, ap_paterno, ap_materno, correo, usuario, contraseña, fecha_nacimiento,palanca,res);
-      });
+    });
       
     /*for(var i=0;i<usuarios.length;i++)
     {
@@ -62,6 +62,7 @@ module.exports = ({nombre, ap_paterno, ap_materno, correo, usuario, contraseña,
             });
     }*/
 };
+
 function insertar (nombre, ap_paterno, ap_materno, correo, usuario, contraseña, fecha_nacimiento,palanca,res){
     if(!palanca)
     {
