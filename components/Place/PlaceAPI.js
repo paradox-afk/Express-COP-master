@@ -47,17 +47,15 @@ Place.get("/", (req, res) =>{
 });
 
 Place.post("/consultarLugares", (req, res) =>{
-  console.log(req.body);
+  console.log("asd5");
   services.consultar(req.body, res);
 });
 
 Place.post("/modificarLugar", (req, res) =>{
-  console.log(req.body);
   services.modificar(req.body, res);
 });
 
 Place.post("/", (req, res) => {
-  console.log("asd");
   services.create(req.body, res);
 });
 
@@ -67,10 +65,8 @@ Place.put("/", (req, res) => {
   });
 });
 
-Place.delete("/", (req, res) => {
-  res.status(200).json({
-    message: "Metodo delete"
-  });
+Place.post("/eliminarLugar", (req, res) => {
+  services.eliminar(req.body, res);
 });
 
 module.exports = Place;
