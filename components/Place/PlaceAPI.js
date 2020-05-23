@@ -13,10 +13,6 @@ Place.use(express.urlencoded({ extended: false }));
 Place.use(express.json());
 Place.use(cors());
 
-
-
-
-
 Place.get("/", (req, res) =>{
   const lugares = [];
 
@@ -48,6 +44,16 @@ Place.get("/", (req, res) =>{
     }
     res.status(statusCode).send(response);
   });
+});
+
+Place.post("/consultarLugares", (req, res) =>{
+  console.log(req.body);
+  services.consultar(req.body, res);
+});
+
+Place.post("/modificarLugar", (req, res) =>{
+  console.log(req.body);
+  services.modificar(req.body, res);
 });
 
 Place.post("/", (req, res) => {

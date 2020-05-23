@@ -20,7 +20,6 @@ User.get("/", (req, res) => {
 
 User.post("/login", (req, res) => {
   services.validate(req.body, res);
-
 });
 
 User.post("/isAuth", middleware, (req, res) => {
@@ -29,8 +28,8 @@ User.post("/isAuth", middleware, (req, res) => {
 
 User.post("/crearUsuario", (req, res) => {
   services.create(req.body, res);
-
 });
+
 
 User.put("/", (req, res) => {
   res.status(200).json({
