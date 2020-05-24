@@ -15,6 +15,7 @@ console.log(condicion);*/
 // Components
 const Place = require("./components/Place/Place");
 const User = require("./components/User/User");
+const Calificacion = require("./components/Calificaciones/Calificaciones");
 
 
 const app = express();
@@ -25,6 +26,7 @@ app.use(cors());
 // Routes
 app.use("/lugares", Place.api);
 app.use("/usuarios", User.api);
+app.use("/calificaciones", Calificacion.api);
 
 app.listen(3000, () => {
   // Set up

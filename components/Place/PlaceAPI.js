@@ -17,7 +17,7 @@ Place.get("/", (req, res) =>{
   const lugares = [];
 
   lugaresDB.findAll(
-    {attributes: ['name', 'image', 'lat', 'lon', 'description']}
+    {attributes: ['id','name', 'image', 'lat', 'lon', 'description']}
   ).then(projects => {
     for(var i=0;i<projects.length;i++)
     {
