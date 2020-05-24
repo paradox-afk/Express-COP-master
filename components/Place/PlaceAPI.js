@@ -47,7 +47,6 @@ Place.get("/", (req, res) =>{
 });
 
 Place.post("/consultarLugares", (req, res) =>{
-  console.log("asd5");
   services.consultar(req.body, res);
 });
 
