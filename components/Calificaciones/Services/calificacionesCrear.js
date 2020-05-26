@@ -7,6 +7,6 @@ module.exports = ({userId, placeId, calificacion}, res) => {
         calificacion
     });
     res.status(200).json({
-        message: "calificacion creada",
+        message: "Primera vez que calificas este lugar",
     });
 };
