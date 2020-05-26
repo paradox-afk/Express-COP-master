@@ -11,8 +11,16 @@ Calificaciones.use(express.urlencoded({ extended: false }));
 Calificaciones.use(express.json());
 Calificaciones.use(cors());
 
+Calificaciones.post("/modificarCalificacion", (req, res) =>{
+  services.modificar(req.body, res);
+});
+
 Calificaciones.post("/consultarCalificacion", (req, res) =>{
   services.consultar(req.body, res);
+});
+
+Calificaciones.post("/crearCalificacion", (req, res) =>{
+  services.create(req.body, res);
 });
 
 
