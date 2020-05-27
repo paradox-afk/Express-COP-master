@@ -18,6 +18,9 @@ Calificaciones.post("/modificarCalificacion", (req, res) =>{
 Calificaciones.post("/consultarCalificacion", (req, res) =>{
   services.consultar(req.body, res);
 });
+Calificaciones.post("/consultarCalificacionTodo", (req, res) =>{
+  services.consultarTodo(req.body, res);
+});
 
 Calificaciones.post("/crearCalificacion", (req, res) =>{
   services.create(req.body, res);

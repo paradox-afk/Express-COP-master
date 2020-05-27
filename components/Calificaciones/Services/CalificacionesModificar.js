@@ -1,12 +1,15 @@
 const dal = require("../CalificacionesDAL");
+const { Op } = require("sequelize");
 
-module.exports = ({calificacion,placeid}, res) => {
-  console.log(placeid);
+module.exports = ({calificacion,userId,placeId}, res) => {
   dal.update({
       calificacion:calificacion,
     }, {
       where: {
-          placeId:placeid
+        [Op.and]: [
+          { userId: userId },
+          { placeId: placeId }
+        ]
       }
     }
   );
